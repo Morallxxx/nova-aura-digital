@@ -1,13 +1,49 @@
+import { 
+  SiPhp, 
+  SiLaravel, 
+  SiNodedotjs, 
+  SiPython, 
+  SiReact, 
+  SiNextdotjs,
+  SiVuedotjs,
+  SiTypescript,
+  SiDocker,
+  SiAmazon,
+  SiPostgresql,
+  SiMongodb,
+  SiRedis,
+  SiGraphql,
+  SiTailwindcss,
+  SiFlutter,
+  SiWordpress,
+  SiShopify
+} from "react-icons/si";
+
 const technologies = [
-  "PHP", "Laravel", "Node.js", "Python", "React", "Next.js", 
-  "Vue.js", "TypeScript", "Docker", "AWS", "PostgreSQL", "MongoDB",
-  "Redis", "GraphQL", "Tailwind CSS", "Flutter", "WordPress", "Shopify"
+  { name: "PHP", icon: SiPhp },
+  { name: "Laravel", icon: SiLaravel },
+  { name: "Node.js", icon: SiNodedotjs },
+  { name: "Python", icon: SiPython },
+  { name: "React", icon: SiReact },
+  { name: "Next.js", icon: SiNextdotjs },
+  { name: "Vue.js", icon: SiVuedotjs },
+  { name: "TypeScript", icon: SiTypescript },
+  { name: "Docker", icon: SiDocker },
+  { name: "AWS", icon: SiAmazon },
+  { name: "PostgreSQL", icon: SiPostgresql },
+  { name: "MongoDB", icon: SiMongodb },
+  { name: "Redis", icon: SiRedis },
+  { name: "GraphQL", icon: SiGraphql },
+  { name: "Tailwind", icon: SiTailwindcss },
+  { name: "Flutter", icon: SiFlutter },
+  { name: "WordPress", icon: SiWordpress },
+  { name: "Shopify", icon: SiShopify },
 ];
 
 const TechStack = () => {
   return (
-    <section className="py-16 overflow-hidden border-y border-border/50 bg-muted/20">
-      <div className="container mx-auto mb-8">
+    <section className="py-12 overflow-hidden border-y border-border/30">
+      <div className="container mx-auto mb-6">
         <p className="text-center text-sm text-muted-foreground uppercase tracking-wider">
           Tecnologias que dominamos
         </p>
@@ -15,32 +51,32 @@ const TechStack = () => {
       
       <div className="relative">
         {/* Gradient Masks */}
-        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent z-10" />
-        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent z-10" />
+        <div className="absolute left-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
         
         {/* Scrolling Container */}
-        <div className="flex animate-scroll-left">
+        <div className="flex animate-scroll-left hover:[animation-play-state:paused]">
           {/* First Set */}
-          <div className="flex gap-12 px-6">
+          <div className="flex gap-8 px-4">
             {technologies.map((tech, index) => (
               <div 
                 key={`first-${index}`}
-                className="flex items-center gap-2 px-6 py-3 rounded-xl bg-card border border-border/50 whitespace-nowrap hover:border-primary/50 transition-colors"
+                className="flex items-center gap-3 px-5 py-3 rounded-xl bg-card/50 border border-border/30 whitespace-nowrap hover:border-primary/40 transition-colors group"
               >
-                <span className="w-2 h-2 rounded-full bg-primary" />
-                <span className="text-sm font-medium text-foreground">{tech}</span>
+                <tech.icon className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors">{tech.name}</span>
               </div>
             ))}
           </div>
           {/* Duplicate Set for Seamless Loop */}
-          <div className="flex gap-12 px-6">
+          <div className="flex gap-8 px-4">
             {technologies.map((tech, index) => (
               <div 
                 key={`second-${index}`}
-                className="flex items-center gap-2 px-6 py-3 rounded-xl bg-card border border-border/50 whitespace-nowrap hover:border-primary/50 transition-colors"
+                className="flex items-center gap-3 px-5 py-3 rounded-xl bg-card/50 border border-border/30 whitespace-nowrap hover:border-primary/40 transition-colors group"
               >
-                <span className="w-2 h-2 rounded-full bg-primary" />
-                <span className="text-sm font-medium text-foreground">{tech}</span>
+                <tech.icon className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors">{tech.name}</span>
               </div>
             ))}
           </div>

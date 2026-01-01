@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo-lojadoblack.png";
@@ -13,6 +13,15 @@ const navLinks = [
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleNavClick = (href: string) => {
     setIsMenuOpen(false);
@@ -23,7 +32,13 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 glass border-b">
+    <header 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled 
+          ? "bg-background/80 backdrop-blur-lg border-b border-border/50" 
+          : "bg-transparent"
+      }`}
+    >
       <div className="container mx-auto">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
@@ -52,7 +67,6 @@ const Header = () => {
           <div className="hidden md:block">
             <Button 
               onClick={() => handleNavClick("#contato")}
-              className="glow-primary-sm"
             >
               Falar Agora
             </Button>
@@ -70,7 +84,7 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden py-4 border-t border-border animate-fade-in">
+          <nav className="md:hidden py-4 border-t border-border/50 bg-background/95 backdrop-blur-lg animate-fade-in">
             <div className="flex flex-col gap-2">
               {navLinks.map((link) => (
                 <button
@@ -84,7 +98,7 @@ const Header = () => {
               <div className="px-4 pt-2">
                 <Button 
                   onClick={() => handleNavClick("#contato")}
-                  className="w-full glow-primary-sm"
+                  className="w-full"
                 >
                   Falar Agora
                 </Button>
