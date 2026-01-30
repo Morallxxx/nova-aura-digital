@@ -35,13 +35,13 @@ const differentials = [
 
 const Differentials = () => {
   return (
-    <section id="diferenciais" className="py-20 md:py-32 bg-muted/20">
+    <section id="diferenciais" className="py-20 md:py-32 bg-background">
       <div className="container mx-auto">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 px-4">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-foreground">
             Por que escolher a{" "}
-            <span className="text-gradient">Loja do Black</span>?
+            <span className="text-primary">Loja do Black</span>?
           </h2>
           <p className="text-muted-foreground text-lg">
             Nosso compromisso é entregar não apenas código, mas soluções 
@@ -54,12 +54,12 @@ const Differentials = () => {
           {differentials.map((item, index) => (
             <div 
               key={index}
-              className="group p-6 rounded-2xl bg-card/30 border border-border/50 hover:border-primary/30 transition-all duration-300 hover:bg-card/50"
+              className="group p-6 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg"
             >
-              <div className="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                <item.icon className="w-6 h-6 text-primary" />
+              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
+                <item.icon className="w-6 h-6 text-primary group-hover:text-white transition-colors" />
               </div>
-              <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
+              <h3 className="text-lg font-semibold mb-2 text-foreground">{item.title}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 {item.description}
               </p>

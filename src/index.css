@@ -2,76 +2,76 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Design System - Loja do Black - Tema Roxo Premium */
+/* Design System - Estilo Vivo */
 
 @layer base {
   :root {
-    /* Paleta Roxa Premium */
-    --background: 240 10% 4%; /* #0B0B12 */
-    --foreground: 270 50% 95%; /* #EDE9FE */
-
-    --card: 240 10% 7%;
-    --card-foreground: 270 50% 95%;
-
-    --popover: 240 10% 7%;
-    --popover-foreground: 270 50% 95%;
-
-    --primary: 262 83% 58%; /* #7C3AED */
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 262 83% 45%; /* #5B21B6 */
-    --secondary-foreground: 0 0% 100%;
-
-    --muted: 240 10% 15%;
-    --muted-foreground: 270 20% 70%;
-
-    --accent: 262 76% 75%; /* #A78BFA */
-    --accent-foreground: 240 10% 4%;
-
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 262 30% 20%;
-    --input: 262 30% 18%;
-    --ring: 262 83% 58%;
-
-    --radius: 0.75rem;
-
-    /* Custom Colors */
-    --glow-primary: 262 83% 58%;
-    --glow-accent: 262 76% 75%;
-    --gradient-start: 262 83% 58%;
-    --gradient-end: 262 76% 75%;
-  }
-
-  .light {
-    --background: 0 0% 100%;
-    --foreground: 220 13% 9%; /* #111827 */
+    /* Paleta Vivo - Roxo vibrante com fundo branco */
+    --background: 0 0% 100%; /* Branco */
+    --foreground: 270 4% 20%; /* Texto escuro */
 
     --card: 0 0% 100%;
-    --card-foreground: 220 13% 9%;
+    --card-foreground: 270 4% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 13% 9%;
+    --popover-foreground: 270 4% 20%;
 
-    --primary: 262 83% 58%;
+    --primary: 276 91% 38%; /* Roxo Vivo #660099 */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 262 83% 45%;
+    --secondary: 32 100% 50%; /* Laranja Vivo #FF8000 */
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 270 30% 96%;
-    --muted-foreground: 220 13% 40%;
+    --muted: 270 10% 96%;
+    --muted-foreground: 270 4% 45%;
 
-    --accent: 262 76% 75%;
-    --accent-foreground: 220 13% 9%;
+    --accent: 276 91% 38%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 262 30% 85%;
-    --input: 262 30% 90%;
-    --ring: 262 83% 58%;
+    --border: 270 10% 90%;
+    --input: 270 10% 92%;
+    --ring: 276 91% 38%;
+
+    --radius: 0.5rem;
+
+    /* Custom Colors Vivo */
+    --vivo-purple: 276 91% 38%;
+    --vivo-purple-light: 276 70% 55%;
+    --vivo-orange: 32 100% 50%;
+    --vivo-green: 145 63% 42%;
+  }
+
+  .dark {
+    --background: 270 10% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 270 10% 10%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 270 10% 10%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 276 91% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 32 100% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 270 10% 18%;
+    --muted-foreground: 270 10% 60%;
+
+    --accent: 276 91% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 270 10% 20%;
+    --input: 270 10% 18%;
+    --ring: 276 91% 50%;
   }
 }
 
@@ -86,58 +86,70 @@
 
   body {
     @apply bg-background text-foreground antialiased;
+    font-family: "Vivo Type", system-ui, -apple-system, sans-serif;
   }
 }
 
 @layer utilities {
-  /* Glow Effects - Subtle */
-  .glow-primary {
-    box-shadow: 0 0 12px hsl(var(--primary) / 0.25);
+  /* Vivo Style Utilities */
+  .bg-vivo-purple {
+    background-color: hsl(var(--vivo-purple));
   }
 
-  .glow-primary-sm {
-    box-shadow: 0 0 8px hsl(var(--primary) / 0.2);
+  .bg-vivo-orange {
+    background-color: hsl(var(--vivo-orange));
   }
 
-  .glow-accent {
-    box-shadow: 0 0 12px hsl(var(--accent) / 0.2);
+  .text-vivo-purple {
+    color: hsl(var(--vivo-purple));
+  }
+
+  .text-vivo-orange {
+    color: hsl(var(--vivo-orange));
   }
 
   /* Gradients */
-  .gradient-primary {
-    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+  .gradient-vivo {
+    background: linear-gradient(135deg, hsl(var(--vivo-purple)), hsl(var(--vivo-purple-light)));
   }
 
-  .gradient-primary-radial {
-    background: radial-gradient(ellipse at center, hsl(var(--primary) / 0.3), transparent 70%);
-  }
-
-  .gradient-hero {
-    background: linear-gradient(180deg, 
-      hsl(var(--primary) / 0.15) 0%, 
-      transparent 50%,
-      hsl(var(--accent) / 0.1) 100%);
+  .gradient-vivo-hero {
+    background: linear-gradient(135deg, hsl(276 91% 38%), hsl(276 70% 50%));
   }
 
   /* Text Gradient */
   .text-gradient {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    background-image: linear-gradient(135deg, hsl(var(--vivo-purple)), hsl(var(--vivo-purple-light)));
   }
 
-  /* Glass Effect */
-  .glass {
-    @apply bg-background/80 backdrop-blur-lg border-border/50;
+  /* Card Styles */
+  .card-vivo {
+    @apply bg-card rounded-lg border border-border transition-all duration-200;
   }
 
-  /* Card Hover Effect */
-  .card-glow {
-    @apply transition-all duration-300;
+  .card-vivo:hover {
+    @apply shadow-lg;
+    transform: translateY(-2px);
   }
 
-  .card-glow:hover {
-    border-color: hsl(var(--primary) / 0.4);
-    transform: translateY(-4px);
+  /* Badge Styles */
+  .badge-vivo {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold;
+  }
+
+  .badge-purple {
+    @apply bg-primary text-primary-foreground;
+  }
+
+  .badge-orange {
+    background-color: hsl(var(--vivo-orange));
+    @apply text-white;
+  }
+
+  .badge-green {
+    background-color: hsl(var(--vivo-green));
+    @apply text-white;
   }
 
   /* Infinite Scroll Animation */
@@ -176,7 +188,7 @@
       transform: scale(1);
     }
     50% {
-      transform: scale(1.05);
+      transform: scale(1.02);
     }
   }
 
