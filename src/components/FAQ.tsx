@@ -34,19 +34,19 @@ const faqs = [
 
 const FAQ = () => {
   return (
-    <section id="faq" className="py-20 md:py-32 relative">
+    <section id="faq" className="py-24 md:py-32 relative bg-muted/10">
       {/* Background Effect */}
-      <div className="absolute bottom-0 left-0 right-0 h-1/2 gradient-primary-radial opacity-20" />
+      <div className="absolute bottom-0 left-0 right-0 h-1/2 gradient-primary-radial opacity-30" />
       
       <div className="container mx-auto relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16 px-4">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-            Perguntas{" "}
-            <span className="text-gradient">Frequentes</span>
+        <div className="text-center max-w-3xl mx-auto mb-16 px-4">
+          <h2 className="mb-6 text-foreground">
+            Frequently{" "}
+            <span className="text-gradient">Asked Questions</span>
           </h2>
-          <p className="text-muted-foreground text-lg">
-            Tire suas dúvidas sobre nosso processo de trabalho e serviços.
+          <p className="text-muted-foreground text-xl leading-relaxed">
+            Get answers about our process and services.
           </p>
         </div>
 
@@ -57,9 +57,9 @@ const FAQ = () => {
               <AccordionItem 
                 key={index} 
                 value={`item-${index}`}
-                className="bg-card/30 border border-border/50 rounded-2xl px-6 data-[state=open]:border-primary/30"
+                className="bg-card border border-border rounded-2xl px-6 data-[state=open]:border-primary/50"
               >
-                <AccordionTrigger className="text-left hover:no-underline py-6 text-base font-medium">
+                <AccordionTrigger className="text-left hover:no-underline py-6 text-base font-medium text-foreground">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground pb-6 text-base leading-relaxed">

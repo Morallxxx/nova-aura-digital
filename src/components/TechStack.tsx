@@ -42,26 +42,26 @@ const technologies = [
 
 const TechStack = () => {
   return (
-    <section className="py-12 overflow-hidden bg-muted/30 border-y border-border">
-      <div className="container mx-auto mb-6">
+    <section className="py-16 overflow-hidden bg-muted/10 border-y border-border">
+      <div className="container mx-auto mb-8">
         <p className="text-center text-sm text-muted-foreground uppercase tracking-wider font-medium">
-          Tecnologias que dominamos
+          Technologies we master
         </p>
       </div>
       
       <div className="relative">
         {/* Gradient Masks */}
-        <div className="absolute left-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-r from-muted/30 to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-l from-muted/30 to-transparent z-10 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
         
         {/* Scrolling Container */}
         <div className="flex animate-scroll-left hover:[animation-play-state:paused]">
           {/* First Set */}
-          <div className="flex gap-8 px-4">
+          <div className="flex gap-6 px-4">
             {technologies.map((tech, index) => (
               <div 
                 key={`first-${index}`}
-                className="flex items-center gap-3 px-5 py-3 rounded-xl bg-card border border-border whitespace-nowrap hover:border-primary/50 hover:shadow-md transition-all group"
+                className="flex items-center gap-3 px-5 py-3 rounded-full bg-card border border-border whitespace-nowrap hover:border-primary/50 transition-all group"
               >
                 <tech.icon className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
                 <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors">{tech.name}</span>
@@ -69,11 +69,11 @@ const TechStack = () => {
             ))}
           </div>
           {/* Duplicate Set for Seamless Loop */}
-          <div className="flex gap-8 px-4">
+          <div className="flex gap-6 px-4">
             {technologies.map((tech, index) => (
               <div 
                 key={`second-${index}`}
-                className="flex items-center gap-3 px-5 py-3 rounded-xl bg-card border border-border whitespace-nowrap hover:border-primary/50 hover:shadow-md transition-all group"
+                className="flex items-center gap-3 px-5 py-3 rounded-full bg-card border border-border whitespace-nowrap hover:border-primary/50 transition-all group"
               >
                 <tech.icon className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
                 <span className="text-sm font-medium text-muted-foreground group-hover:text-foreground transition-colors">{tech.name}</span>

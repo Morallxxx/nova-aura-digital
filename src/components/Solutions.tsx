@@ -1,5 +1,4 @@
 import { Palette, Shield, Bot, CheckCircle2, ArrowRight } from "lucide-react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
 const solutions = [
@@ -25,51 +24,45 @@ const solutions = [
 
 const Solutions = () => {
   return (
-    <section id="solucoes" className="py-20 md:py-32 bg-muted/30">
+    <section id="solucoes" className="py-24 md:py-32 bg-muted/10">
       <div className="container mx-auto">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16 px-4">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-foreground">
-            Soluções que{" "}
-            <span className="text-primary">impulsionam</span>
-            {" "}resultados
+        <div className="text-center max-w-3xl mx-auto mb-16 px-4">
+          <h2 className="mb-6 text-foreground">
+            The one platform{" "}
+            <span className="text-gradient">behind it all</span>
           </h2>
-          <p className="text-muted-foreground text-lg">
-            Desenvolvemos software sob medida com as melhores tecnologias do mercado, 
-            garantindo qualidade e performance em cada linha de código.
+          <p className="text-muted-foreground text-xl leading-relaxed">
+            Sell online and in person. Sell locally and globally. Sell direct and wholesale.
           </p>
         </div>
 
         {/* Solutions Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
           {solutions.map((solution, index) => (
-            <Card 
+            <div 
               key={index}
-              className="bg-card border-border card-vivo group"
+              className="group p-8 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-300"
             >
-              <CardHeader>
-                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
-                  <solution.icon className="w-7 h-7 text-primary group-hover:text-white transition-colors" />
-                </div>
-                <CardTitle className="text-xl text-foreground">{solution.title}</CardTitle>
-                <CardDescription className="text-base text-muted-foreground">
-                  {solution.description}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3 mb-6">
-                  {solution.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center gap-3 text-sm text-muted-foreground">
-                      <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                <Button variant="link" className="text-primary p-0 h-auto">
-                  Saiba mais <ArrowRight className="w-4 h-4 ml-1" />
-                </Button>
-              </CardContent>
-            </Card>
+              <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
+                <solution.icon className="w-7 h-7 text-primary group-hover:text-primary-foreground transition-colors" />
+              </div>
+              <h3 className="text-xl font-semibold text-foreground mb-3">{solution.title}</h3>
+              <p className="text-muted-foreground mb-6 leading-relaxed">
+                {solution.description}
+              </p>
+              <ul className="space-y-3 mb-6">
+                {solution.features.map((feature, featureIndex) => (
+                  <li key={featureIndex} className="flex items-center gap-3 text-sm text-muted-foreground">
+                    <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              <Button variant="link" className="text-foreground p-0 h-auto group-hover:text-primary transition-colors">
+                Learn more <ArrowRight className="w-4 h-4 ml-1" />
+              </Button>
+            </div>
           ))}
         </div>
       </div>
