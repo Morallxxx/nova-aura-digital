@@ -1,5 +1,4 @@
 import { Instagram, Linkedin, Github, MessageCircle } from "lucide-react";
-import logo from "@/assets/logo-lojadoblack.png";
 
 const footerLinks = [
   { href: "#inicio", label: "Início" },
@@ -27,26 +26,30 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-card/50 border-t border-border/50">
+    <footer className="bg-primary text-white">
       <div className="container mx-auto py-12 md:py-16">
         <div className="grid md:grid-cols-3 gap-10 px-4">
           {/* Brand */}
           <div className="space-y-4">
-            <img src={logo} alt="Loja do Black" className="h-10 w-auto" />
-            <p className="text-sm text-muted-foreground max-w-xs">
+            <div className="flex items-center gap-2">
+              <span className="text-2xl font-bold text-white">loja</span>
+              <span className="text-2xl font-bold text-secondary">do black</span>
+              <span className="text-white text-3xl">✦</span>
+            </div>
+            <p className="text-sm text-white/80 max-w-xs">
               Desenvolvimento de software premium para empresas que buscam inovação e resultados.
             </p>
           </div>
 
           {/* Navigation */}
           <div className="space-y-4">
-            <h4 className="font-semibold text-foreground">Navegação</h4>
+            <h4 className="font-semibold text-white">Navegação</h4>
             <nav className="flex flex-col gap-2">
               {footerLinks.map((link) => (
                 <button
                   key={link.href}
                   onClick={() => handleNavClick(link.href)}
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors text-left"
+                  className="text-sm text-white/80 hover:text-white transition-colors text-left"
                 >
                   {link.label}
                 </button>
@@ -56,7 +59,7 @@ const Footer = () => {
 
           {/* Social */}
           <div className="space-y-4">
-            <h4 className="font-semibold text-foreground">Redes Sociais</h4>
+            <h4 className="font-semibold text-white">Redes Sociais</h4>
             <div className="flex gap-4">
               {socialLinks.map((social) => (
                 <a
@@ -65,7 +68,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="w-10 h-10 rounded-xl bg-muted/50 border border-border/50 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/30 transition-colors"
+                  className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-white/80 hover:text-white hover:bg-white/20 transition-colors"
                 >
                   <social.icon className="w-5 h-5" />
                 </a>
@@ -75,12 +78,12 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-border/50 mt-10 pt-8 px-4">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
+        <div className="border-t border-white/20 mt-10 pt-8 px-4">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/80">
             <p>© {new Date().getFullYear()} Loja do Black. Todos os direitos reservados.</p>
             <div className="flex gap-6">
-              <a href="#" className="hover:text-primary transition-colors">Política de Privacidade</a>
-              <a href="#" className="hover:text-primary transition-colors">Termos de Uso</a>
+              <a href="#" className="hover:text-white transition-colors">Política de Privacidade</a>
+              <a href="#" className="hover:text-white transition-colors">Termos de Uso</a>
             </div>
           </div>
         </div>
