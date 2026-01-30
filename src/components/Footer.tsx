@@ -31,13 +31,12 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-10 px-4">
           {/* Brand */}
           <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <span className="text-2xl font-bold text-white">loja</span>
-              <span className="text-2xl font-bold text-secondary">do black</span>
-              <span className="text-white text-3xl">✦</span>
+            <div className="flex items-center gap-1">
+              <span className="text-2xl font-bold text-white">vivo</span>
+              <span className="text-white text-2xl">✦</span>
             </div>
             <p className="text-sm text-white/80 max-w-xs">
-              Desenvolvimento de software premium para empresas que buscam inovação e resultados.
+              Conectando você ao que mais importa. Soluções digitais para todos.
             </p>
           </div>
 

@@ -86,7 +86,12 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: "Vivo Type", system-ui, -apple-system, sans-serif;
+    font-family: "Vivo Type", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
+  /* Vivo Typography */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
   }
 }
 
