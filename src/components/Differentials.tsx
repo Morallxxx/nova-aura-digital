@@ -35,17 +35,16 @@ const differentials = [
 
 const Differentials = () => {
   return (
-    <section id="diferenciais" className="py-20 md:py-32 bg-background">
+    <section id="diferenciais" className="py-24 md:py-32 bg-background">
       <div className="container mx-auto">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16 px-4">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-foreground">
-            Por que escolher a{" "}
-            <span className="text-primary">Loja do Black</span>?
+        <div className="text-center max-w-3xl mx-auto mb-16 px-4">
+          <h2 className="mb-6 text-foreground">
+            Why choose{" "}
+            <span className="text-gradient">Loja do Black</span>?
           </h2>
-          <p className="text-muted-foreground text-lg">
-            Nosso compromisso é entregar não apenas código, mas soluções 
-            que geram valor real para o seu negócio.
+          <p className="text-muted-foreground text-xl leading-relaxed">
+            Our commitment is to deliver not just code, but solutions that generate real value for your business.
           </p>
         </div>
 
@@ -54,13 +53,13 @@ const Differentials = () => {
           {differentials.map((item, index) => (
             <div 
               key={index}
-              className="group p-6 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg"
+              className="group p-8 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-300"
             >
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
-                <item.icon className="w-6 h-6 text-primary group-hover:text-white transition-colors" />
+              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary transition-colors">
+                <item.icon className="w-6 h-6 text-primary group-hover:text-primary-foreground transition-colors" />
               </div>
-              <h3 className="text-lg font-semibold mb-2 text-foreground">{item.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
+              <h3 className="text-lg font-semibold mb-3 text-foreground">{item.title}</h3>
+              <p className="text-muted-foreground leading-relaxed">
                 {item.description}
               </p>
             </div>

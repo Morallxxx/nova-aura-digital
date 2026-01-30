@@ -2,76 +2,76 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Design System - Estilo Vivo */
+/* Design System - Estilo Shopify */
 
 @layer base {
   :root {
-    /* Paleta Vivo - Roxo vibrante com fundo branco */
-    --background: 0 0% 100%; /* Branco */
-    --foreground: 270 4% 20%; /* Texto escuro */
+    /* Paleta Shopify - Fundo escuro com verde lima */
+    --background: 0 0% 0%; /* Preto */
+    --foreground: 0 0% 98%; /* Branco */
 
-    --card: 0 0% 100%;
-    --card-foreground: 270 4% 20%;
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 270 4% 20%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 276 91% 38%; /* Roxo Vivo #660099 */
-    --primary-foreground: 0 0% 100%;
+    --primary: 82 68% 45%; /* Verde Shopify #95BF47 */
+    --primary-foreground: 0 0% 0%;
 
-    --secondary: 32 100% 50%; /* Laranja Vivo #FF8000 */
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 270 10% 96%;
-    --muted-foreground: 270 4% 45%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 65%;
 
-    --accent: 276 91% 38%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 82 68% 45%;
+    --accent-foreground: 0 0% 0%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 270 10% 90%;
-    --input: 270 10% 92%;
-    --ring: 276 91% 38%;
+    --border: 0 0% 18%;
+    --input: 0 0% 15%;
+    --ring: 82 68% 45%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    /* Custom Colors Vivo */
-    --vivo-purple: 276 91% 38%;
-    --vivo-purple-light: 276 70% 55%;
-    --vivo-orange: 32 100% 50%;
-    --vivo-green: 145 63% 42%;
+    /* Custom Colors Shopify */
+    --shopify-green: 82 68% 45%;
+    --shopify-green-light: 82 68% 55%;
+    --shopify-dark: 0 0% 7%;
+    --shopify-darker: 0 0% 4%;
   }
 
   .dark {
-    --background: 270 10% 8%;
+    --background: 0 0% 0%;
     --foreground: 0 0% 98%;
 
-    --card: 270 10% 10%;
+    --card: 0 0% 7%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 270 10% 10%;
+    --popover: 0 0% 7%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 276 91% 50%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 82 68% 45%;
+    --primary-foreground: 0 0% 0%;
 
-    --secondary: 32 100% 50%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 270 10% 18%;
-    --muted-foreground: 270 10% 60%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 65%;
 
-    --accent: 276 91% 50%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 82 68% 45%;
+    --accent-foreground: 0 0% 0%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 270 10% 20%;
-    --input: 270 10% 18%;
-    --ring: 276 91% 50%;
+    --border: 0 0% 18%;
+    --input: 0 0% 15%;
+    --ring: 82 68% 45%;
   }
 }
 
@@ -86,75 +86,77 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: "Vivo Type", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
   }
 
-  /* Vivo Typography */
+  /* Shopify Typography - Bold and impactful */
   h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    line-height: 1.05;
+  }
+
+  h2 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.1;
   }
 }
 
 @layer utilities {
-  /* Vivo Style Utilities */
-  .bg-vivo-purple {
-    background-color: hsl(var(--vivo-purple));
+  /* Shopify Style Utilities */
+  .bg-shopify-green {
+    background-color: hsl(var(--shopify-green));
   }
 
-  .bg-vivo-orange {
-    background-color: hsl(var(--vivo-orange));
+  .bg-shopify-dark {
+    background-color: hsl(var(--shopify-dark));
   }
 
-  .text-vivo-purple {
-    color: hsl(var(--vivo-purple));
-  }
-
-  .text-vivo-orange {
-    color: hsl(var(--vivo-orange));
+  .text-shopify-green {
+    color: hsl(var(--shopify-green));
   }
 
   /* Gradients */
-  .gradient-vivo {
-    background: linear-gradient(135deg, hsl(var(--vivo-purple)), hsl(var(--vivo-purple-light)));
+  .gradient-shopify {
+    background: linear-gradient(135deg, hsl(var(--shopify-green)), hsl(var(--shopify-green-light)));
   }
 
-  .gradient-vivo-hero {
-    background: linear-gradient(135deg, hsl(276 91% 38%), hsl(276 70% 50%));
+  .gradient-dark-fade {
+    background: linear-gradient(180deg, hsl(0 0% 0%) 0%, hsl(0 0% 7%) 100%);
   }
 
   /* Text Gradient */
   .text-gradient {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(var(--vivo-purple)), hsl(var(--vivo-purple-light)));
+    background-image: linear-gradient(135deg, hsl(var(--shopify-green)), hsl(var(--shopify-green-light)));
   }
 
   /* Card Styles */
-  .card-vivo {
-    @apply bg-card rounded-lg border border-border transition-all duration-200;
+  .card-shopify {
+    @apply bg-card rounded-xl border border-border transition-all duration-300;
   }
 
-  .card-vivo:hover {
-    @apply shadow-lg;
-    transform: translateY(-2px);
+  .card-shopify:hover {
+    @apply border-primary/50;
+    transform: translateY(-4px);
   }
 
-  /* Badge Styles */
-  .badge-vivo {
-    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold;
+  /* Button Styles */
+  .btn-shopify {
+    @apply inline-flex items-center justify-center rounded-full font-semibold transition-all duration-200;
+    @apply px-8 py-4 text-base;
   }
 
-  .badge-purple {
-    @apply bg-primary text-primary-foreground;
+  .btn-shopify-primary {
+    @apply bg-foreground text-background hover:bg-foreground/90;
   }
 
-  .badge-orange {
-    background-color: hsl(var(--vivo-orange));
-    @apply text-white;
-  }
-
-  .badge-green {
-    background-color: hsl(var(--vivo-green));
-    @apply text-white;
+  .btn-shopify-outline {
+    @apply border-2 border-foreground/20 text-foreground hover:border-foreground/40;
   }
 
   /* Infinite Scroll Animation */
@@ -187,17 +189,13 @@
     animation: fade-in-up 0.6s ease-out forwards;
   }
 
-  /* Pulse Animation */
-  @keyframes pulse-subtle {
-    0%, 100% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.02);
-    }
+  /* Glow effect */
+  .glow-primary {
+    box-shadow: 0 0 30px hsl(var(--primary) / 0.3);
   }
 
-  .animate-pulse-subtle {
-    animation: pulse-subtle 2s ease-in-out infinite;
+  /* Gradient Primary Radial */
+  .gradient-primary-radial {
+    background: radial-gradient(ellipse at center, hsl(var(--primary) / 0.2) 0%, transparent 70%);
   }
 }

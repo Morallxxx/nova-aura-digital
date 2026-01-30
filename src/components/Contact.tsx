@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Send, MessageCircle, Mail, User } from "lucide-react";
+import { Send, MessageCircle, Mail, User, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -58,19 +58,19 @@ const Contact = () => {
   };
 
   return (
-    <section id="contato" className="py-20 md:py-32 bg-muted/20 relative">
+    <section id="contato" className="py-24 md:py-32 bg-background relative">
       {/* Background Effect */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl" />
       
       <div className="container mx-auto relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16 px-4">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-            Vamos{" "}
-            <span className="text-gradient">conversar</span>?
+        <div className="text-center max-w-3xl mx-auto mb-16 px-4">
+          <h2 className="mb-6 text-foreground">
+            Ready to{" "}
+            <span className="text-gradient">get started</span>?
           </h2>
-          <p className="text-muted-foreground text-lg">
-            Conte-nos sobre seu projeto. Estamos prontos para transformar sua ideia em realidade.
+          <p className="text-muted-foreground text-xl leading-relaxed">
+            Tell us about your project. We're ready to turn your idea into reality.
           </p>
         </div>
 
@@ -79,66 +79,66 @@ const Contact = () => {
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <Label htmlFor="name" className="flex items-center gap-2">
+                <Label htmlFor="name" className="flex items-center gap-2 text-foreground">
                   <User className="w-4 h-4 text-primary" />
-                  Seu Nome
+                  Your Name
                 </Label>
                 <Input
                   id="name"
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  placeholder="Como podemos te chamar?"
-                  className="bg-card/50 border-border/50 focus:border-primary h-12"
+                  placeholder="How can we call you?"
+                  className="bg-card border-border focus:border-primary h-12 rounded-xl"
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="contact" className="flex items-center gap-2">
+                <Label htmlFor="contact" className="flex items-center gap-2 text-foreground">
                   <Mail className="w-4 h-4 text-primary" />
-                  E-mail ou WhatsApp
+                  Email or WhatsApp
                 </Label>
                 <Input
                   id="contact"
                   name="contact"
                   value={formData.contact}
                   onChange={handleChange}
-                  placeholder="seu@email.com ou (11) 99999-9999"
-                  className="bg-card/50 border-border/50 focus:border-primary h-12"
+                  placeholder="your@email.com"
+                  className="bg-card border-border focus:border-primary h-12 rounded-xl"
                 />
               </div>
             </div>
             
             <div className="space-y-2">
-              <Label htmlFor="message" className="flex items-center gap-2">
+              <Label htmlFor="message" className="flex items-center gap-2 text-foreground">
                 <MessageCircle className="w-4 h-4 text-primary" />
-                Sua Mensagem
+                Your Message
               </Label>
               <Textarea
                 id="message"
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                placeholder="Descreva seu projeto, ideia ou necessidade..."
+                placeholder="Describe your project, idea, or need..."
                 rows={5}
-                className="bg-card/50 border-border/50 focus:border-primary resize-none"
+                className="bg-card border-border focus:border-primary resize-none rounded-xl"
               />
             </div>
 
             <Button 
               type="submit" 
               size="lg" 
-              className="w-full glow-primary h-14 text-base"
+              className="w-full h-14 text-base rounded-full bg-foreground text-background hover:bg-foreground/90 font-semibold"
               disabled={isLoading}
             >
               {isLoading ? (
                 <span className="flex items-center gap-2">
-                  <div className="w-4 h-4 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" />
-                  Enviando...
+                  <div className="w-4 h-4 border-2 border-background/30 border-t-background rounded-full animate-spin" />
+                  Sending...
                 </span>
               ) : (
                 <span className="flex items-center gap-2">
-                  <Send className="w-5 h-5" />
-                  Enviar Mensagem
+                  Send Message
+                  <ArrowRight className="w-5 h-5" />
                 </span>
               )}
             </Button>
@@ -146,9 +146,9 @@ const Contact = () => {
 
           {/* Divider */}
           <div className="flex items-center gap-4 my-8">
-            <div className="flex-1 h-px bg-border/50" />
-            <span className="text-sm text-muted-foreground">ou</span>
-            <div className="flex-1 h-px bg-border/50" />
+            <div className="flex-1 h-px bg-border" />
+            <span className="text-sm text-muted-foreground">or</span>
+            <div className="flex-1 h-px bg-border" />
           </div>
 
           {/* WhatsApp Direct */}
@@ -156,10 +156,10 @@ const Contact = () => {
             onClick={handleWhatsAppClick}
             variant="outline" 
             size="lg" 
-            className="w-full h-14 text-base border-green-500/50 text-green-400 hover:bg-green-500/10 hover:text-green-300"
+            className="w-full h-14 text-base rounded-full border-primary/50 text-primary hover:bg-primary/10 hover:text-primary font-semibold"
           >
             <MessageCircle className="w-5 h-5 mr-2" />
-            Falar Direto no WhatsApp
+            Chat on WhatsApp
           </Button>
         </div>
       </div>
