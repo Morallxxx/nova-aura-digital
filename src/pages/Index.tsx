@@ -15,7 +15,7 @@ const Index = () => {
       <main>
         <Hero />
         <div className="flex items-center justify-center py-20">
-          <h1 className="text-6xl font-bold text-gradient">OI</h1>
+          <h1 className="text-4xl md:text-6xl font-bold text-gradient text-center px-4">OIII TE LIGUEIII MANO KKKK</h1>
         </div>
         <TechStack />
         <Solutions />
