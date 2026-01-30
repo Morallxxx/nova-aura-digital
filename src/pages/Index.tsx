@@ -17,6 +17,7 @@ const Index = () => {
         <div className="flex flex-col items-center justify-center py-20 gap-6">
           <img src="/logo-lojadoblack.png" alt="Logo Loja do Black" className="w-32 md:w-48 h-auto" />
           <h1 className="text-4xl md:text-6xl font-bold text-gradient text-center px-4">OIII TE LIGUEIII MANO KKKK</h1>
+          <p className="text-2xl md:text-4xl font-semibold text-primary text-center px-4">VARIOS BEIJINHOOOO 😘😘😘</p>
         </div>
         <TechStack />
         <Solutions />
